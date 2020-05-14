@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Pet Database Application</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,8 +10,175 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="">
+      <meta name="author" content="ink, cookbook, recipes">
+      <meta name="HandheldFriendly" content="True">
+      <meta name="MobileOptimized" content="320">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+      <!-- load Ink's CSS -->
+      <link rel="stylesheet" type="text/css" href="./css/ink-flex.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+
+
+      <!-- test browser flexbox support and load legacy grid if unsupported -->
+      <script type="text/javascript" src="./js/modernizr.js"></script>
+      <script type="text/javascript">
+          Modernizr.load({
+            test: Modernizr.flexbox,
+            nope : './css/ink-legacy.min.css'
+          });
+      </script>
+
+      <!-- load Ink's javascript files -->
+      <script type="text/javascript" src="./js/holder.js"></script>
+      <script type="text/javascript" src="./js/ink-all.min.js"></script>
+      <script type="text/javascript" src="./js/autoload.js"></script>
+
+
+      <style>
+          .screen-size-helper {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              line-height: 1.6em;
+              font-size: 1em;
+              padding: 0.5333333333333333em 0.8em;
+              background: rgba(0, 0, 0, 0.7);
+              z-index: 100;
+          }
+          .screen-size-helper .title,
+          .screen-size-helper ul {
+              color: white;
+              text-shadow: 0 1px 0 #000000;
+          }
+          .screen-size-helper .title {
+              font-size: inherit;
+              line-height: inherit;
+              float: left;
+              text-transform: uppercase;
+              font-weight: 500;
+          }
+          .screen-size-helper ul {
+              float: right;
+              margin: 0;
+              padding: 0;
+              line-height: inherit !important;
+          }
+          .screen-size-helper ul li {
+              padding: 0;
+              margin: 0;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: inherit !important;
+          }
+          .screen-size-helper ul li.tiny {
+            color: #0f75da;
+          }
+          .screen-size-helper ul li.small {
+            color: #4a9b17;
+          }
+          .screen-size-helper ul li.medium {
+            color: #ff9c00;
+          }
+          .screen-size-helper ul li.large {
+            color: #c91111;
+          }
+          .screen-size-helper ul li.xlarge {
+            color: white;
+          }
+      </style>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+
+      <div class="ink-grid">
+        <div class="column-group">
+          <div class="all-10">
+          </div>
+          <div class="text-center all-80">
+            <h1 class='center fw-700'>Pet Database Application</h1>
+          </div>
+          <div class="all-10">
+          </div>
+        </div>
+      </div>
+
+      <nav class="ink-navigation">
+          <ul class="menu horizontal black">
+              <li class="heading active">
+                  <a href="#">Home</a>
+                  <ul class="submenu">
+                      <li><a href="#">Sign In</a></li>
+                      <li><a href="#">Sign Up</a></li>
+                  </ul>
+              </li>
+              <li class="disabled"><a href="#">Sign-Out</a></li>
+          </ul>
+      </nav>
+
+      <!-- Splash Image -->
+      <div class="ink-grid">
+        <div class="column-group">
+          <div class="all-10">
+          </div>
+          <div class="center all-80">
+            <figure class="ink-image">
+              <img src='./petPhotos/sunny.jpg' alt='sunny'>
+            </figure>
+          </div>
+          <div class="all-10">
+          </div>
+        </div>
+      </div>
+
+      <form class="ink-form sign-in">
+
+        <div class="ink-grid">
+          <div class="column-group">
+            <div class="all-10">
+            </div>
+            <div class="control-group validation warning prepend-symbol">
+              <i class="fa fa-envelope-o"></i>
+              <label for="warn-field">Email</label>
+                <div class="control">
+                  <input id="email" name="email" type="email" placeholder="Please type your email here">
+                </div>
+                <p class="tip">Required</p>
+            <div class="control-group validation warning">
+              <i class="fa fa-lock"></i>
+              <label for="warn-field">Password</label>
+            <div class="control">
+              <input id="password" name="password" type="password" placeholder="Please type your password here">
+            </div>
+            <p class="tip">Required</p>
+          </div>
+          <button class="ink-button green">Submit</button>
+          </div>
+        </div>
+      </div>
+      </form>
+
+      <div class="control-group all-50 small-100 tiny-100">
+          <div class="control prepend-symbol">
+              <span>
+                  <input type="text" name="email" placeholder="email">
+                  <i class="fa fa-envelope-o"></i>
+              </span>
+          </div>
+      </div>
+
+
     </body>
 </html>
+
+<!-- Load the js files -->
+<script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/ink-all.js"></script>
+<!-- Autoload is required for the examples on this page. Read more below. -->
+<script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/autoload.js"></script>
