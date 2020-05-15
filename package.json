@@ -7,16 +7,10 @@
     "content": "CC­BY­NC­SA 4.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.2",
-    "compass": "^0.1.1",
-    "ink": "^2.7.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.3",
-    "react": "^16.13.1",
-    "ruby": "^0.6.1",
-    "rubygems": "^1.0.3"
+    "popper.js": "^1.14.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
