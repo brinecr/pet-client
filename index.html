@@ -16,16 +16,16 @@
     <body>
 
       <!-- Navigation Bar -->
-      <nav class="navbar navbar-dark" style="background-color: #563D7C;">
+      <nav class="navbar navbar-dark nav-justified" style="background-color: #563D7C;">
         <!-- Navigation Bar title -->
         <a class="navbar-brand">Pet Tracker Application</a>
-        <a class="navbar-brand">🐈🐕🐎🐄🐖🐐🐁🐇🦎🐢🐠🦜</a>
+        <a class="navbar-nav">🐈🐕🐎🐄🐖🐐🐁🐇🦎🐢🐠🦜</a>
 
         <!-- Sign-In Section -->
         <form class="form-inline sign-in-section">
-          <input class="form-control mr-sm-2" type="email" placeholder="email" aria-label="email">
-          <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="password">
-          <button class="btn btn-success my-2 my-sm-0 sign-in-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to an Existing Account!">🐾 Sign-In 🐾</button>
+          <input class="form-control mr-sm-2" type="email" placeholder="email" aria-label="email" name='credentials[email]'>
+          <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="password" name='credentials[password]'>
+          <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to an Existing Account!">🐾 Sign-In 🐾</button>
         </form>
 
         <!-- Sign-Up Dropdown Button -->
@@ -37,20 +37,20 @@
           <form class="px-4 py-3">
             <div class="form-group">
               <label for="emailSignUp">Email address</label>
-              <input type="email" class="form-control" placeholder="email@example.com">
+              <input type="email" class="form-control" placeholder="email@example.com" name='credentials[email]'>
             </div>
             <div class="form-group">
               <label for="password">New Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" name='credentials[password]'>
             </div>
             <div class="form-group">
               <label for="confirmPassword">Confirm Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" name='credentials[password_confirmation]'>
             </div>
             <button type="submit" class="btn btn-secondary">Sign-Up</button>
           </form>
           <div class="dropdown-divider"></div>
-          <p class="dropdown-item" href="#">Please enter your information!</p>
+          <p class="dropdown-item">Please enter your information!</p>
         </div>
         </div>
 
@@ -63,21 +63,21 @@
           <form class="px-4 py-3">
             <div class="form-group">
               <label for="oldPassword">Old Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" name='passwords[old]'>
             </div>
             <div class="form-group">
               <label for="newPassword">New Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password" name='passwords[new]'>
             </div>
             <button type="submit" class="btn btn-secondary">Change Password</button>
           </form>
           <div class="dropdown-divider"></div>
-          <p class="dropdown-item" href="#">Please enter your information!</p>
+          <p class="dropdown-item">Please enter your information!</p>
           </div>
         </div>
 
           <!-- Sign-Out Button -->
-          <button class="btn btn-danger my-2 my-sm-0 sign-out-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Out!">Sign-Out</button>
+          <button class="sign-out-section btn btn-danger my-2 my-sm-0 sign-out-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Out!">Sign-Out</button>
 
       </nav>
 
@@ -112,8 +112,8 @@
       <!-- Greeting Text Section -->
       <div class='textbox container greetings-text'>
         <div class='row mb-1'>
-          <div class='col-6 text-right px-1'>Hello</div>
-          <div class='col-6 text-left px-1' id='username'>User</div>
+          <div class='col-12 text-center'>Hello</div>
+          <div class='col-12 text-center' id='username'>User</div>
         </div>
       </div>
       <!-- Buttons -->
@@ -133,15 +133,15 @@
           <form class="px-4 py-3">
             <div class="form-group">
               <label for="petName">Name</label>
-              <input type="text" class="form-control" placeholder="Pet Name" required="true">
+              <input type="text" class="form-control" placeholder="Pet Name (required)" required="true" name='pet[name]'>
             </div>
             <div class="form-group">
               <label for="petBreed">Breed</label>
-              <input type="text" class="form-control" placeholder="Pet Breed" required="true">
+              <input type="text" class="form-control" placeholder="Pet Breed (required)" required="true" name='pet[breed]'>
             </div>
             <div class="form-group">
               <label for='petDescription'>Description</label>
-              <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+              <textarea type="text" class="form-control" placeholder="Description" rows="3" name='pet[description]'></textarea>
             </div>
             <button type="submit" class="btn btn-secondary">Submit New Pet</button>
           </form>
@@ -161,19 +161,19 @@
               <form class="px-4 py-3">
                 <div class="form-group">
                   <label for="petName">ID</label>
-                  <input type="text" class="form-control" placeholder="Pet ID" required="true">
+                  <input type="text" class="form-control" placeholder="Pet ID (required)" required="true" name='pet[id]'>
                 </div>
                 <div class="form-group">
                   <label for="petName">Name</label>
-                  <input type="text" class="form-control" placeholder="Pet Name" required="true">
+                  <input type="text" class="form-control" placeholder="Pet Name" name='pet[name]'>
                 </div>
                 <div class="form-group">
                   <label for="petBreed">Breed</label>
-                  <input type="text" class="form-control" placeholder="Pet Breed" required="true">
+                  <input type="text" class="form-control" placeholder="Pet Breed" name='pet[breed]'>
                 </div>
                 <div class="form-group">
                   <label for='petDescription'>Description</label>
-                  <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+                  <textarea type="text" class="form-control" placeholder="Description" rows="3" name='pet[description]'></textarea>
                 </div>
                 <button type="submit" class="btn btn-secondary">Update Pet Information</button>
               </form>
@@ -188,19 +188,19 @@
         <div class='row mb-1'>
           <div class='textbox container remove-a-pet-section'>
             <div class="dropdown">
-              <button class="col-12 btn btn-danger dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="col-12 btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               😿 Remove A Pet 😿
               </button>
               <div class="dropdown-menu">
               <form class="px-4 py-3">
                 <div class="form-group">
                   <label for="petName">ID</label>
-                  <input type="text" class="form-control" placeholder="Pet ID" required="true">
+                  <input type="text" class="form-control" placeholder="Pet ID" required="true" name='pet[id]'>
                 </div>
                 <button type="submit" class="btn btn-secondary">Remove A Pet</button>
               </form>
               <div class="dropdown-divider"></div>
-              <p class="dropdown-item">Please enter your information!</p>
+              <p class="dropdown-item">Enter the pet's ID to remove!</p>
               </div>
             </div>
           </div>
@@ -210,7 +210,8 @@
 
 
 
-  <nav class="navbar navbar-dark fixed-bottom" style="background-color: #563D7C;">
+  <nav class="navbar navbar-custom fixed-bottom" style="background-color: #563D7C;">
+  </nav>
 
     </body>
 </html>
