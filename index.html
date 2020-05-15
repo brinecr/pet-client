@@ -19,33 +19,33 @@
       <nav class="navbar navbar-dark" style="background-color: #563D7C;">
         <!-- Navigation Bar title -->
         <a class="navbar-brand">Pet Tracker Application</a>
-        🐈🐕🐎🐄🐖🐐🐁🐇🐧🦎🐢🐟🐠🕷️
+        <a class="navbar-brand">🐈🐕🐎🐄🐖🐐🐁🐇🦎🐢🐠🦜</a>
 
         <!-- Sign-In Section -->
         <form class="form-inline sign-in-section">
           <input class="form-control mr-sm-2" type="email" placeholder="email" aria-label="email">
           <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="password">
-          <button class="btn btn-success my-2 my-sm-0 sign-in-button" type="submit">🐾Sign-In🐾</button>
+          <button class="btn btn-success my-2 my-sm-0 sign-in-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to an Existing Account!">🐾 Sign-In 🐾</button>
         </form>
 
         <!-- Sign-Up Dropdown Button -->
-        <div class="dropdown sign-up-section">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          🐾Sign-Up🐾
+        <div class="dropdown sign-up-section data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Up for a New Account!"">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🐾 Sign-Up 🐾
           </button>
           <div class="dropdown-menu dropdown-menu-lg-right">
           <form class="px-4 py-3">
             <div class="form-group">
               <label for="emailSignUp">Email address</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+              <input type="email" class="form-control" placeholder="email@example.com">
             </div>
             <div class="form-group">
               <label for="password">New Password</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="confirmPassword">Confirm Password</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+              <input type="password" class="form-control" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-secondary">Sign-Up</button>
           </form>
@@ -55,8 +55,8 @@
         </div>
 
         <!-- Change Password Button -->
-        <div class="dropdown change-password-section">
-          <button class="btn btn-warning dropdown-toggle my-2 my-sm-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown change-password-section" data-toggle="tooltip" data-placement="top" title="Click Here to Change your Password!">
+          <button class="btn btn-warning dropdown-toggle my-2 my-sm-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Change Password
           </button>
           <div class="dropdown-menu dropdown-menu-lg-right">
@@ -73,13 +73,16 @@
           </form>
           <div class="dropdown-divider"></div>
           <p class="dropdown-item" href="#">Please enter your information!</p>
-        </div>
+          </div>
         </div>
 
           <!-- Sign-Out Button -->
-          <button class="btn btn-danger my-2 my-sm-0 sign-out-button" type="submit">Sign-Out</button>
+          <button class="btn btn-danger my-2 my-sm-0 sign-out-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Out!">Sign-Out</button>
 
       </nav>
+
+      <!-- Success/Error Indicator -->
+      <div id='message'></div>
 
       <!-- Splash Page Carousel -->
       <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -105,7 +108,109 @@
         </div>
       </div>
 
+    <div class='signed-in-section'>
+      <!-- Greeting Text Section -->
+      <div class='textbox container greetings-text'>
+        <div class='row mb-1'>
+          <div class='col-6 text-right px-1'>Hello</div>
+          <div class='col-6 text-left px-1' id='username'>User</div>
+        </div>
+      </div>
+      <!-- Buttons -->
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <button type="button" class="col-12 btn btn-primary btn-lg see-your-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to See your Pets!">
+          🐾 See Your Pets 🐾
+          </button>
+        </div>
+      </div>
+      <div class='textbox container add-a-pet-section'>
+        <div class="dropdown">
+          <button class="col-12 btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🐶 Add A Pet 🐶
+          </button>
+          <div class="dropdown-menu">
+          <form class="px-4 py-3">
+            <div class="form-group">
+              <label for="petName">Name</label>
+              <input type="text" class="form-control" placeholder="Pet Name" required="true">
+            </div>
+            <div class="form-group">
+              <label for="petBreed">Breed</label>
+              <input type="text" class="form-control" placeholder="Pet Breed" required="true">
+            </div>
+            <div class="form-group">
+              <label for='petDescription'>Description</label>
+              <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit New Pet</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <p class="dropdown-item">Please enter your information!</p>
+          </div>
+        </div>
+      </div>
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <div class='textbox container update-a-pet-section'>
+            <div class="dropdown">
+              <button class="col-12 btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              🐾 Update A Pet 🐾
+              </button>
+              <div class="dropdown-menu">
+              <form class="px-4 py-3">
+                <div class="form-group">
+                  <label for="petName">ID</label>
+                  <input type="text" class="form-control" placeholder="Pet ID" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="petName">Name</label>
+                  <input type="text" class="form-control" placeholder="Pet Name" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="petBreed">Breed</label>
+                  <input type="text" class="form-control" placeholder="Pet Breed" required="true">
+                </div>
+                <div class="form-group">
+                  <label for='petDescription'>Description</label>
+                  <textarea type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Update Pet Information</button>
+              </form>
+              <div class="dropdown-divider"></div>
+              <p class="dropdown-item">Please enter your information!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <div class='textbox container remove-a-pet-section'>
+            <div class="dropdown">
+              <button class="col-12 btn btn-danger dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              😿 Remove A Pet 😿
+              </button>
+              <div class="dropdown-menu">
+              <form class="px-4 py-3">
+                <div class="form-group">
+                  <label for="petName">ID</label>
+                  <input type="text" class="form-control" placeholder="Pet ID" required="true">
+                </div>
+                <button type="submit" class="btn btn-secondary">Remove A Pet</button>
+              </form>
+              <div class="dropdown-divider"></div>
+              <p class="dropdown-item">Please enter your information!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+
+  <nav class="navbar navbar-dark fixed-bottom" style="background-color: #563D7C;">
 
     </body>
 </html>

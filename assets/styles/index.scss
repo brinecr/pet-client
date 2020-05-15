@@ -1,24 +1,55 @@
 @import '~bootstrap/scss/bootstrap';
 
-// .sign-out-button {
-//   display: none;
-// }
-
 .carousel img {
   max-height: calc(100vh - 50px);
   min-width: auto;
 }
 
-// #carousel {
-//   display: none;
-// }
-
-.sign-out-button {
+#carousel {
   display: none;
 }
 
-.change-password-section {
+.sign-in-section {
   display: none;
+}
+
+.sign-up-section {
+  display: none;
+}
+
+// .sign-out-button {
+//   display: none;
+// }
+//
+// .change-password-section {
+//   display: none;
+// }
+
+.signed-in-section {
+  margin-top: 20px;
+}
+
+.greetings-text {
+  margin-bottom: 20px;
+}
+
+.see-your-pets-section {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.add-a-pet-section {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.update-a-pet-section {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.remove-a-pet-section {
+  padding: 10px;
 }
 
 // .sign-in-section {
