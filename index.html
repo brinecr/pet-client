@@ -133,27 +133,37 @@
         <div class="column-group">
           <div class="all-10"></div>
           <div class="center all-80">
-            <figure class="ink-image">
-              <img src='./petPhotos/sunny.jpg' alt='sunny'>
+
+            <figure class="ink-lazyload" data-delta="-10" data-placeholder="/assets/img/loading.gif" data-loaded-class="loaded">
+              <img class="center lazyload-item loaded-class-example" data-src="./petPhotos/sunny.jpg">
             </figure>
+
+            </div>
           </div>
           <div class="all-10"></div>
         </div>
       </div>
 
+      <!-- Sign In and Sign Up buttons -->
       <div class="ink-grid">
         <div class="column-group">
           <div class="text-center all-10">
             <i class="text-center fa fa-paw"></i>
           </div>
           <div class="text-center all-30">
-            <button class="ink-button green">Sign In</button>
+            <button class="ink-tooltip ink-button large green"
+            data-tip-text="Click Here to Log into an Existing Account!"
+            data-tip-fade="0.5"
+            data-tip-color="green">Sign In</button>
           </div>
           <div class="text-center all-20">
             <i class="text-center fa fa-paw"></i>
           </div>
           <div class="text-center all-30">
-            <button class="ink-button blue">Sign Up</button>
+            <button class="ink-tooltip ink-button large blue"
+            data-tip-text="Click Here to Create a New Account!"
+            data-tip-fade="0.5"
+            data-tip-color="blue">Sign Up</button>
           </div>
           <div class="text-center all-10">
             <i class="text-center fa fa-paw"></i>
@@ -161,43 +171,293 @@
         </div>
       </div>
 
-
+      <!-- Sign In Section-->
+      <div class="ink-grid sign-in">
+        <div class="column-group">
+          <div class="text-center all-10">
+            <i class="text-center fa fa-paw"></i>
+          </div>
+          <div class="text-center all-80">
+            <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i>
+            <h1 class='center fw-700'>Sign-In</h1>
+          </div>
+          <div class="text-center all-10">
+            <i class="fa fa-paw"></i>
+          </div>
+        </div>
+      </div>
       <form class="ink-form sign-in">
-
         <div class="ink-grid">
           <div class="column-group">
             <div class="all-10">
             </div>
+            <div class="all-80">
             <div class="control-group validation warning prepend-symbol">
               <i class="fa fa-envelope-o"></i>
               <label for="warn-field">Email</label>
                 <div class="control">
-                  <input id="email" name="email" type="email" placeholder="Please type your email here">
+                  <input id="email" name="email" type="email" placeholder="Type your email here">
                 </div>
                 <p class="tip">Required</p>
             <div class="control-group validation warning">
               <i class="fa fa-lock"></i>
               <label for="warn-field">Password</label>
             <div class="control">
-              <input id="password" name="password" type="password" placeholder="Please type your password here">
+              <input id="password" name="password" type="password" placeholder="Type your password here">
             </div>
             <p class="tip">Required</p>
           </div>
-          <button class="ink-button green">Submit</button>
+          </div>
+          </div>
+          <div class="all-10">
+          </div>
+
+          <div class="text-center all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button text-center green"
+            data-tip-text="Click Here to Submit Sign In Information!"
+            data-tip-fade="0.5"
+            data-tip-color="green">Submit
+            </button>
+
+            <button class="ink-tooltip ink-button red"
+            data-tip-text="Click Here to go back to the previous screen!"
+            data-tip-fade="0.5"
+            data-tip-color="red">Back
+            </button>
+            <div class="text-center all-10">
+            </div>
           </div>
         </div>
       </div>
       </form>
 
-      <div class="control-group all-50 small-100 tiny-100">
-          <div class="control prepend-symbol">
-              <span>
-                  <input type="text" name="email" placeholder="email">
-                  <i class="fa fa-envelope-o"></i>
-              </span>
+      <!-- Sign-Up Section -->
+      <div class="ink-grid sign-up">
+        <div class="column-group">
+          <div class="text-center all-10">
+            <i class="text-center fa fa-paw"></i>
           </div>
+          <div class="text-center all-80">
+            <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i>
+            <h1 class='center fw-700'>Sign-Up</h1>
+          </div>
+          <div class="text-center all-10">
+            <i class="fa fa-paw"></i>
+          </div>
+        </div>
+      </div>
+      <form class="ink-form sign-up">
+        <div class="ink-grid">
+          <div class="column-group">
+            <div class="all-10">
+            </div>
+            <div class="all-80">
+            <div class="control-group validation warning prepend-symbol">
+              <i class="fa fa-envelope-o"></i>
+              <label for="warn-field">Email</label>
+                <div class="control">
+                  <input id="email" name="email" type="email" placeholder="Type your email here">
+                </div>
+                <p class="tip">Required</p>
+            <div class="control-group validation warning">
+              <i class="fa fa-lock"></i>
+              <label for="warn-field">Password</label>
+            <div class="control">
+              <input id="password" name="password" type="password" placeholder="Type your password here">
+            </div>
+            <p class="tip">Required</p>
+          </div>
+            <div class="control-group validation warning">
+              <i class="fa fa-lock"></i>
+              <label for="warn-field">Confirm Password</label>
+            <div class="control">
+              <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm your password here">
+            </div>
+            <p class="tip">Required</p>
+          </div>
+          </div>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-center all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button text-center green"
+            data-tip-text="Click Here to Submit Sign In Information!"
+            data-tip-fade="0.5"
+            data-tip-color="green"
+            type ='submit'>Submit
+            </button>
+
+            <button class="ink-tooltip ink-button red"
+            data-tip-text="Click Here to go back to the previous screen!"
+            data-tip-fade="0.5"
+            data-tip-color="red"
+            type='submit'>Back
+            </button>
+            <div class="text-center all-10">
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+
+      <!-- Change Password Section -->
+      <div class="ink-grid change-password">
+        <div class="column-group">
+          <div class="text-center all-10">
+            <i class="text-center fa fa-paw"></i>
+          </div>
+          <div class="text-center all-80">
+            <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i>
+            <h1 class='center fw-700'>Change Password</h1>
+          </div>
+          <div class="text-center all-10">
+            <i class="fa fa-paw"></i>
+          </div>
+        </div>
+      </div>
+      <form class="ink-form change-password">
+        <div class="ink-grid">
+          <div class="column-group">
+            <div class="all-10">
+            </div>
+            <div class="all-80">
+            <div class="control-group validation warning">
+              <i class="fa fa-lock"></i>
+              <label for="warn-field">Current Password</label>
+            <div class="control">
+              <input id="password" name="password" type="password" placeholder="Type your password here">
+            </div>
+            <p class="tip">Required</p>
+          </div>
+            <div class="control-group validation warning">
+              <i class="fa fa-lock"></i>
+              <label for="warn-field">New Password</label>
+            <div class="control">
+              <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm your password here">
+            </div>
+            <p class="tip">Required</p>
+          </div>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-center all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button text-center green"
+            data-tip-text="Click Here to Submit Sign In Information!"
+            data-tip-fade="0.5"
+            data-tip-color="green">Submit
+            </button>
+
+            <button class="ink-tooltip ink-button red"
+            data-tip-text="Click Here to go back to the previous screen!"
+            data-tip-fade="0.5"
+            data-tip-color="red">Back
+            </button>
+            <div class="text-center all-10">
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+
+      <!-- Main Signed In Section-->
+      <div class="ink-grid signed-in">
+        <div class="column-group">
+          <div class="text-center all-10">
+            <i class="text-center fa fa-paw"></i>
+          </div>
+          <div class="text-center all-80">
+            <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i> <i class="fa fa-paw"></i>
+            <h1 class='center fw-700'>Welcome!</h1>
+          </div>
+          <div class="text-center all-10">
+            <i class="fa fa-paw"></i>
+          </div>
+        </div>
       </div>
 
+
+
+
+      <div class="ink-grid signed-in-buttons">
+        <div class="column-group horizontal-gutters">
+          <div class="all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button large blue seePets"
+            data-tip-text="Click Here to show all of your pets!"
+            data-tip-fade="0.5"
+            data-tip-color="blue">See Pets</button>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button orange addAPet"
+            data-tip-text="Click Here to update an existing pet!"
+            data-tip-fade="0.5"
+            data-tip-color="orange">Update Pet Info</button>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button green addAPet"
+            data-tip-text="Click Here to add a new pet!"
+            data-tip-fade="0.5"
+            data-tip-color="green">Add a Pet</button>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-center all-80">
+            <button class="ink-tooltip ink-button small red removeAPet"
+            data-tip-text="Click here to remove a pet!"
+            data-tip-fade="0.5"
+            data-tip-color="red">Remove a Pet</button>
+          </div>
+          <div class="all-10">
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="ink-grid signed-in signed-in-buttons">
+        <div class="column-group horizontal-gutters">
+
+          <div class="all-10">
+          </div>
+          <div class="text-left all-35">
+            <button class="ink-tooltip ink-button orange changePassword"
+            data-tip-text="Click Here to Change your Password!"
+            data-tip-fade="0.5"
+            data-tip-color="orange">Change Password</button>
+          </div>
+          <div class="all-10">
+          </div>
+          <div class="text-right all-35">
+            <button class="ink-tooltip ink-button red signOut"
+            data-tip-text="Click Here to Sign Out"
+            data-tip-fade="0.5"
+            data-tip-color="red">Sign Out</button>
+          </div>
+          <div class="all-10">
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Bottom Paw Section -->
       <div class="ink-grid">
         <div class="column-group">
           <div class="text-center all-10">
@@ -215,6 +475,6 @@
 </html>
 
 <!-- Load the js files -->
-<script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/ink-all.js"></script>
+<!-- <script type="text/javascript" src="http://fastly.ink.sapo.pt/js/ink-all.js"></script> -->
 <!-- Autoload is required for the examples on this page. Read more below. -->
-<script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/autoload.js"></script>
+<!-- <script type="text/javascript" src="http://fastly.ink.sapo.pt/js/autoload.js"></script> -->
