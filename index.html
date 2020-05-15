@@ -1,17 +1,230 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Tic-Tac-Toe Game</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
 
       <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src='public/vendor.js' type='text/javascript' charset='utf-8' defer></script>
+      <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+
+<body>
+  <!-- Title -->
+  <div class='container'>
+    <div class='row'>
+      <h2 class='title col-12 bold fixed-top'>Pet Tracker </h2>
+    </div>
+  </div>
+  <h1><a class='top-padding'>"</a></h1>
+
+  <div id='message'></div>
+
+<!-- Sign-In Form -->
+  <div class='container sign-in'>
+    <div class='row'>
+  <form id='sign-in'>
+    <h3><small class='text-muted'>Sign-In</small></h3>
+      <div class='form-group center'>
+        <label>Email address</label>
+          <input type='email' class='form-control ' name='credentials[email]' aria-describedby='emailHelp' placeholder='Enter email' name='credentials[email]'>
+      </div>
+
+      <div class='form-group'>
+        <label>Password</label>
+        <input type='password' class='form-control' placeholder='Password' name='credentials[password]'>
+      </div>
+
+      <button type='submit' class='btn btn-dark'>Submit</button>
+
+      <button id='create-account-show' type='button' class='btn btn-dark'>Create Account</button>
+  </form>
+</div>
+</div>
+
+
+<!-- Sign-up Form -->
+
+  <div class='container'>
+    <div class='row sign-up'>
+          <form id='sign-up'>
+            <h3><small class='text-muted'>Sign-Up</small></h3>
+            <div class='form-group center'>
+              <label>Email address</label>
+              <input type='email' class='form-control' aria-describedby='emailHelp' placeholder='Enter email' name='credentials[email]'>
+            </div>
+
+            <div class='form-group'>
+              <label>Password</label>
+              <input type='password' class='form-control' id='exampleInputPassword1' placeholder='Password' name='credentials[password]'>
+            </div>
+
+            <div class='form-group'>
+              <label>Confirm Password</label>
+              <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm Password' name='credentials[password_confirmation]'>
+            </div>
+            <button type='submit' class='btn btn-dark'>Submit</button>
+            <button id='sign-in-show' type='button' class='btn btn-dark'>Cancel</button>
+          </form>
+        </div>
+      </div>
+
+<!-- Greeting Text Section -->
+<div class='textbox container'>
+  <div class='row mb-1'>
+    <div class='col-6 text-right px-1'>Hello</div>
+    <div class='col-6 text-left px-1' id='username'></div>
+  </div>
+</div>
+
+
+<!-- Games Played Text Section -->
+<div class='textbox container'>
+  <div class='row mb-1'>
+    <div class='col-6 text-right px-1'>Games Played This Session:</div>
+    <div class='col-6 text-left px-1' id='games-played'></div>
+  </div>
+</div>
+
+<!-- Lucky Number Text Section -->
+<div class='textbox container'>
+  <div class='row mb-1'>
+    <div class='col-6 text-right px-1'>Lucky Number:</div>
+    <div class='col-6 text-left px-1' id='lucky-number'></div>
+  </div>
+</div>
+
+<!-- Create Game button -->
+<div class='container'>
+  <div class='row justify-content-center'>
+    <div class='col text-center'>
+      <button type='button' id='create-game-button' class='btn btn-dark btn-lg mb-1 mt-4'>Create New Game</button>
+    </div>
+  </div>
+</div>
+
+<!-- Change Password Button -->
+<form>
+  <div class='container' >
+    <div class='row'>
+      <div class='col text-center'>
+        <button id='change-password-button' type='button' class='btn btn-dark'>Change Password</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Change Password Form Screen -->
+    <div class='container mb-1 justify-content-center'>
+      <div class='row justify-content-center'>
+            <form id='change-password'>
+              <h3><small class='text-muted'>Change Password</small></h3>
+                            <div class='form-group'>
+                <label>Current Password</label>
+                <input type='password' class='form-control' placeholder='Password' name='passwords[old]'>
+              </div>
+
+              <div class='form-group justify-content-center'>
+                <label>New Password</label>
+                <input type='password' class='form-control' placeholder='Confirm Password' name='passwords[new]'>
+              </div>
+              <button type='submit' class='btn btn-dark'>Submit</button>
+              <button id='signed-in-show' type='button' class='btn btn-dark'>Cancel</button>
+            </form>
+          </div>
+        </div>
+
+<div id='game'>
+<!-- <section id='game'> -->
+  <div class='container'>
+<!-- Player 1 or Player 2 notifier -->
+  <div class='row justify-content-center'>
+      <div id='whose-turn' class='col-3 mb-1 text-center'>Player 1's Turn</div>
+      <div id='game-id' class='col-3 mb-1 text-center'></div>
+  </div>
+</div>
+
+  <div class='container'>
+        <!-- Main grid of elements to click -->
+   <div class='row game-board h-100'>
+     <div id='a1' class='col-4 box'></div>
+     <div id='a2' class='col-4 box'></div>
+     <div id='a3' class='col-4 box'></div>
+
+     <div id='b1' class='col-4 box'></div>
+     <div id='b2' class='col-4 box'></div>
+     <div id='b3' class='col-4 box'></div>
+
+     <div id='c1' class='col-4 box'></div>
+     <div id='c2' class='col-4 box'></div>
+     <div id='c3' class='col-4 box'></div>
+   </div>
+ </div>
+
+</div>
+
+<!-- Cancel Game Button -->
+<div class='container' id='cancel-game-button'>
+  <div class='row justify-content-center'>
+    <div class='col text-center'>
+      <button id='cancel-game' type='button' class='btn btn-dark mb-1 mt-4'>Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Button -->
+<div class='container' id='stats-button'>
+  <div class='row justify-content-center'>
+    <div class='col text-center'>
+      <button id='user-stats-button' type="button" class="btn btn-dark mb-1" data-toggle="modal" data-target="#exampleModal">
+      Previous Game Information
+      </button>
+      </div>
+    </div>
+</div>
+
+<!-- Sign-Out Button -->
+  <form id='sign-out'>
+    <div class='container' id='sign-out-button'>
+      <div class='row justify-content-center'>
+        <div class='col text-center'>
+          <button type='submit' class='btn btn-outline-dark mb-1'>Sign-Out</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+<!-- Stats Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="user-stats">Previous Game Results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+
+        <!-- Games Played Total Text Section -->
+        <div class='textbox container'>
+          <div class='row mb-1'>
+            <div class='col-12 text-left' id='games-played-total'></div>
+          </div>
+        </div>
+
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>

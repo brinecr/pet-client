@@ -1,1 +1,129 @@
 @import '~bootstrap/scss/bootstrap';
+$alt-color: #000;
+$body-bg-color: $gray-200;
+$font-color: #FFF;
+
+.title {
+  background-color: $alt-color;
+  color: $font-color;
+  padding-top: 40px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up {
+  justify-content: center;
+  display: flex;
+}
+
+.top-padding {
+  padding-top: 40px;
+}
+
+.game-board {
+  margin: auto;
+  max-height: 75vh;
+  max-width: 75vh;
+  background: url(public/pulsar.jpg) center;
+  background-size: cover;
+}
+
+.box {
+  border-right: 4px solid $alt-color;
+  border-bottom: 4px solid $alt-color;
+
+  height: 20vh;
+  width: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $font-color;
+  font-size: 10vh;
+  text-shadow: 2px 2px rgba(0, 0, 0, .5);
+
+  cursor: pointer;
+  user-select: none;
+
+  background-color: white;
+
+  &:hover {
+    background: rgba(0, 0, 0, .5);
+  }
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
+}
+
+.box2 {
+  align-items: center;
+  background-color: $white;
+  color: $black;
+  display: flex;
+  height: 100px;
+  width: 100px;
+  justify-content: center;
+}
+
+.alt-color {
+  background-color: $alt-color;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.b-3 {
+  padding: $spacer;
+}
+
+#sign-up {
+  display: none;
+}
+
+.textbox {
+  display: none;
+}
+
+#sign-out-button {
+  display: none;
+}
+
+#stats-button {
+ display: none;
+}
+
+#create-game-button {
+  display: none;
+}
+
+#game {
+  display: none;
+}
+
+#change-password-button {
+  display: none;
+}
+
+#change-password {
+  display: none;
+}
+
+#cancel-game {
+  display: none;
+}
