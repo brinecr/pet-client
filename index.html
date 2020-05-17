@@ -28,6 +28,9 @@
           <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to an Existing Account!">🐾 Sign-In 🐾</button>
         </form>
 
+        <!-- Auto Sign-In Button -->
+        <button class="btn btn-info my-2 my-sm-0 guest-account-section" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to a Guest Account!">🕸️ Guest 🕷️</button>
+
         <!-- Sign-Up Dropdown Button -->
         <div class="dropdown sign-up-section data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Up for a New Account!"">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,12 +100,6 @@
             <img src="./pet-photos/daisy.jpg" class="d-block w-100" alt="Daisy">
           </div>
           <div class="carousel-item">
-            <img src="./pet-photos/vinny.jpg" class="d-block w-100" alt="Vinny">
-          </div>
-          <div class="carousel-item">
-            <img src="./pet-photos/leia.jpg" class="d-block w-100" alt="Leia">
-          </div>
-          <div class="carousel-item">
             <img src="./pet-photos/tom.jpg" class="d-block w-100" alt="Tom">
           </div>
         </div>
@@ -116,14 +113,40 @@
           <div class='col-12 text-center' id='username'>User</div>
         </div>
       </div>
-      <!-- Buttons -->
+
+      <!--See All Your Pets Section -->
       <div class='textbox container'>
         <div class='row mb-1'>
           <button type="button" class="col-12 btn btn-primary btn-lg see-your-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to See your Pets!">
-          🐾 See Your Pets 🐾
+          🐾 See All of Your Pets 🐾
           </button>
         </div>
       </div>
+
+      <!-- Show Your Pet by ID Section -->
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <div class='textbox container show-a-pet-section'>
+            <div class="dropdown">
+              <button class="col-12 btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              🦊 Show A Pet by ID 🦊
+              </button>
+              <div class="dropdown-menu">
+              <form class="px-4 py-3">
+                <div class="form-group">
+                  <label for="petName">ID</label>
+                  <input type="text" class="form-control" placeholder="Pet ID" required="true" name='pet[id]'>
+                </div>
+                <button type="submit" class="btn btn-secondary">Show A Pet</button>
+              </form>
+              <div class="dropdown-divider"></div>
+              <p class="dropdown-item">Enter the pet's ID to show them!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add a Pet -->
       <div class='textbox container add-a-pet-section'>
         <div class="dropdown">
           <button class="col-12 btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,6 +173,7 @@
           </div>
         </div>
       </div>
+      <!-- Update a Pet -->
       <div class='textbox container'>
         <div class='row mb-1'>
           <div class='textbox container update-a-pet-section'>
@@ -184,6 +208,7 @@
           </div>
         </div>
       </div>
+
       <div class='textbox container'>
         <div class='row mb-1'>
           <div class='textbox container remove-a-pet-section'>
@@ -206,6 +231,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
 

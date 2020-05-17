@@ -38,9 +38,25 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const guestSignIn = function (event) {
+  event.preventDefault()
+  console.log('guest sign-in ran!')
+
+  const data = {
+    credentials: {
+      email: 'test@test.com',
+      password: 'test'
+    }
+  }
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  guestSignIn
 }
