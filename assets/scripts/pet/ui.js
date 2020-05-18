@@ -1,13 +1,17 @@
 'use strict'
 
-const store = require('../store')
-// Sign-Up
+const showPets = require('../templates/pet-listing.handlebars')
+
+// Show All of Your Pets
 const showAllPetsSuccess = function (data) {
   $('#message').show()
   $('#message').text('Showed all pets successfully!')
   $('#message').removeClass()
   $('#message').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
+  console.log(data.pets)
+  const showPetsHtml = showPets({ pets: data.pets })
+  $('.content').html(showPetsHtml)
 }
 
 const showAllPetsFailure = function (error) {
@@ -18,6 +22,7 @@ const showAllPetsFailure = function (error) {
   $('form').trigger('reset')
 }
 
+// Show a Pet By ID
 const showPetSuccess = function (data) {
   $('#message').show()
   $('#message').text('Showed pet successfully!')
@@ -34,72 +39,51 @@ const showPetFailure = function (error) {
   $('form').trigger('reset')
 }
 
-// Sign-In
-const signInSuccess = function (data) {
+// Add a Pet
+const addPetSuccess = function (data) {
   $('#message').show()
-  $('#message').text('Signed-In successfully!')
+  $('#message').text('Added pet successfully!')
   $('#message').removeClass()
-  $('#message').addClass('alert alert-success')
-  $('#username').text(data.user.email)
-  store.user = data.user
-  $('.sign-out-section').show()
-  $('.signed-in-section').show()
-  $('.sign-in-section').hide()
-  $('.sign-up-section').hide()
-  $('.change-password-section').show()
+  $('#message').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
 }
 
-const signInFailure = function (error) {
+const addPetFailure = function (error) {
   $('#message').show()
-  $('#message').text(`Failure to Sign-In! ${error.statusText}`)
+  $('#message').text(`Failure to add pet! ${error.responseText}`)
   $('#message').removeClass()
   $('#message').addClass('alert alert-danger justify-content-center')
   $('form').trigger('reset')
 }
 
-// Change Password
-const changePasswordSuccess = function (data) {
+// Update a Pet
+const updatePetSuccess = function (data) {
   $('#message').show()
-  $('#message').text('Password changed successfully!')
+  $('#message').text('Updated pet successfully!')
   $('#message').removeClass()
-  $('#message').addClass('alert alert-success justify-content-center')
-  $('form').trigger('reset')
-  $('#change-password').hide()
-  $('#stats-button').show()
-  $('#create-game-button').show()
-  $('.textbox').show()
-  $('#sign-out-button').show()
-  $('#change-password-button').show()
+  $('#message').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
 }
 
-const changePasswordFailure = function (error) {
+const updatePetFailure = function (error) {
   $('#message').show()
-  $('#message').text(`Failure to change password! ${error.statusText}: Invalid Starting Password`)
+  $('#message').text(`Failure to update pet! ${error.responseText}`)
   $('#message').removeClass()
   $('#message').addClass('alert alert-danger justify-content-center')
   $('form').trigger('reset')
 }
 
-// Sign-Out
-const signOutSuccess = function (data) {
+// Remove Pet
+const removePetSuccess = function (data) {
   $('#message').show()
-  $('#message').text('Signed-Out successfully!')
+  $('#message').text('Removed pet successfully!')
   $('#message').removeClass()
   $('#message').addClass('alert alert-success justify-content-center')
-  $('.sign-in-section').show()
-  $('.sign-up-section').show()
-  $('.signed-in-section').hide()
-  $('.sign-out-section').hide()
-  $('.change-password-section').hide()
-  $('form').trigger('reset')
-  store.user = null
 }
 
-const signOutFailure = function (error) {
+const removePetFailure = function (error) {
   $('#message').show()
-  $('#message').text(`Failure to Sign-Out! ${error.responseText}`)
+  $('#message').text(`Failure to remove pet! ${error.responseText}`)
   $('#message').removeClass()
   $('#message').addClass('alert alert-danger justify-content-center')
   $('form').trigger('reset')
@@ -110,10 +94,10 @@ module.exports = {
   showAllPetsFailure,
   showPetSuccess,
   showPetFailure,
-  signInSuccess,
-  signInFailure,
-  changePasswordSuccess,
-  changePasswordFailure,
-  signOutSuccess,
-  signOutFailure
+  addPetSuccess,
+  addPetFailure,
+  updatePetSuccess,
+  updatePetFailure,
+  removePetSuccess,
+  removePetFailure
 }

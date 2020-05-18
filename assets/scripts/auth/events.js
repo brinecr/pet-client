@@ -40,8 +40,6 @@ const onSignOut = function (event) {
 
 const guestSignIn = function (event) {
   event.preventDefault()
-  console.log('guest sign-in ran!')
-
   const data = {
     credentials: {
       email: 'test@test.com',
@@ -53,10 +51,14 @@ const guestSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const addHandlers = () => {
+  $('.sign-up-section').on('submit', onSignUp)
+  $('.sign-in-section').on('submit', onSignIn)
+  $('.sign-out-section').on('click', onSignOut)
+  $('.change-password-section').on('submit', onChangePassword)
+  $('.guest-account-section').on('click', guestSignIn)
+}
+
 module.exports = {
-  onSignUp,
-  onSignIn,
-  onChangePassword,
-  onSignOut,
-  guestSignIn
+  addHandlers
 }

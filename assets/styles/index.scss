@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'theme';
 
 $color: #563d7c;
 $cColor: complement($color);
@@ -30,9 +31,9 @@ $cColor: complement($color);
 }
 
 
-.carousel {
-  display: none;
-}
+// .carousel {
+//   display: none;
+// }
 //
 // .change-password-section {
 //   display: none;

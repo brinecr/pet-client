@@ -30,6 +30,7 @@ const signInSuccess = function (data) {
   $('.signed-in-section').show()
   $('.sign-in-section').hide()
   $('.sign-up-section').hide()
+  $('.carousel').hide()
   $('.change-password-section').show()
   $('form').trigger('reset')
 }
@@ -74,6 +75,7 @@ const signOutSuccess = function (data) {
   $('#message').addClass('alert alert-success justify-content-center')
   $('.sign-in-section').show()
   $('.sign-up-section').show()
+  $('.carousel').show()
   $('.signed-in-section').hide()
   $('.sign-out-section').hide()
   $('.change-password-section').hide()
