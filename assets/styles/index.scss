@@ -1,5 +1,4 @@
 @import '~bootstrap/scss/bootstrap';
-@import 'theme';
 
 $color: #563d7c;
 $cColor: complement($color);
@@ -30,6 +29,9 @@ $cColor: complement($color);
   display: none;
 }
 
+.clear-pets-section {
+  display: none;
+}
 
 // .carousel {
 //   display: none;
@@ -52,6 +54,11 @@ $cColor: complement($color);
   margin-bottom: 20px;
 }
 
+.clear-pets-section {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
 .show-a-pet-section {
   padding: 10px;
   margin-bottom: 20px;
@@ -62,15 +69,27 @@ $cColor: complement($color);
   margin-bottom: 20px;
 }
 
-.update-a-pet-section {
-  padding: 10px;
+// .update-a-pet-section {
+//   padding: 10px;
+// }
+
+.remove-a-pet-section {
   margin-bottom: 20px;
 }
 
-.remove-a-pet-section {
-  padding: 10px;
-  margin-bottom: 20px;
-}
+.content {
+    @include make-row;
+    text-align: center;
+    // &:empty {
+    //   &::before {
+    //     color: lighten($info, 25%);
+    //     font-size: 10vh;
+    //     line-height: .85;
+    //     text-align: center;
+    //     width: 75%;
+      // }
+    // }
+  }
 
 // .sign-in-section {
 //   display: none;

@@ -5,6 +5,9 @@ const showPets = require('../templates/pet-listing.handlebars')
 // Show All of Your Pets
 const showAllPetsSuccess = function (data) {
   $('#message').show()
+  $('.see-your-pets-section').hide()
+  $('.clear-pets-section').show()
+  $('.greetings-text').hide()
   $('#message').text('Showed all pets successfully!')
   $('#message').removeClass()
   $('#message').addClass('alert alert-success alert-dismissible fade show')
@@ -22,22 +25,22 @@ const showAllPetsFailure = function (error) {
   $('form').trigger('reset')
 }
 
-// Show a Pet By ID
-const showPetSuccess = function (data) {
-  $('#message').show()
-  $('#message').text('Showed pet successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success alert-dismissible fade show')
-  $('form').trigger('reset')
-}
-
-const showPetFailure = function (error) {
-  $('#message').show()
-  $('#message').text(`Failure to show pet! ${error.responseText}`)
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-danger justify-content-center')
-  $('form').trigger('reset')
-}
+// // Show a Pet By ID
+// const showPetSuccess = function (data) {
+//   $('#message').show()
+//   $('#message').text('Showed pet successfully!')
+//   $('#message').removeClass()
+//   $('#message').addClass('alert alert-success alert-dismissible fade show')
+//   $('form').trigger('reset')
+// }
+//
+// const showPetFailure = function (error) {
+//   $('#message').show()
+//   $('#message').text(`Failure to show pet! ${error.responseText}`)
+//   $('#message').removeClass()
+//   $('#message').addClass('alert alert-danger justify-content-center')
+//   $('form').trigger('reset')
+// }
 
 // Add a Pet
 const addPetSuccess = function (data) {
@@ -89,15 +92,28 @@ const removePetFailure = function (error) {
   $('form').trigger('reset')
 }
 
+const clearPets = () => {
+  $('#message').show()
+  $('#message').text(`Hid all pets successfully!`)
+  $('#message').removeClass()
+  $('#message').addClass('alert alert-success justify-content-center')
+  $('form').trigger('reset')
+  $('.see-your-pets-section').show()
+  $('.greetings-text').show()
+  $('.clear-pets-section').hide()
+  $('.content').empty()
+}
+
 module.exports = {
   showAllPetsSuccess,
   showAllPetsFailure,
-  showPetSuccess,
-  showPetFailure,
+  // showPetSuccess,
+  // showPetFailure,
   addPetSuccess,
   addPetFailure,
   updatePetSuccess,
   updatePetFailure,
   removePetSuccess,
-  removePetFailure
+  removePetFailure,
+  clearPets
 }

@@ -84,9 +84,9 @@
 
       </nav>
 
-      <!-- Success/Error Indicator -->
+      <!-- Information Indicator Sections -->
       <div id='message'></div>
-      <div id="content" class="content"></div>
+      <div class="content"></div>
 
       <!-- Splash Page Carousel -->
       <div class="carousel slide carousel-fade" data-ride="carousel">
@@ -124,8 +124,16 @@
         </div>
       </div>
 
-      <!-- Show Your Pet by ID Section -->
       <div class='textbox container'>
+        <div class='row mb-1'>
+          <button type="button" class="col-12 btn btn-secondary btn-lg clear-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to Hide your Pets!">
+          🦊 Hide All of Your Pets 🦊
+          </button>
+        </div>
+      </div>
+
+      <!-- Show Your Pet by ID Section -->
+      <!-- <div class='textbox container'>
         <div class='row mb-1'>
           <div class='textbox container show-a-pet-section'>
             <div class="dropdown">
@@ -146,7 +154,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Add a Pet -->
       <div class='textbox container add-a-pet-section'>
         <div class="dropdown">
@@ -174,64 +182,7 @@
           </div>
         </div>
       </div>
-      <!-- Update a Pet -->
-      <div class='textbox container'>
-        <div class='row mb-1'>
-          <div class='textbox container update-a-pet-section'>
-            <div class="dropdown">
-              <button class="col-12 btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              🐾 Update A Pet 🐾
-              </button>
-              <div class="dropdown-menu">
-              <form class="px-4 py-3">
-                <div class="form-group">
-                  <label for="petName">ID</label>
-                  <input type="text" class="form-control" placeholder="Pet ID (required)" required="true" name='pet[id]'>
-                </div>
-                <div class="form-group">
-                  <label for="petName">Name</label>
-                  <input type="text" class="form-control" placeholder="Pet Name" name='pet[name]'>
-                </div>
-                <div class="form-group">
-                  <label for="petBreed">Breed</label>
-                  <input type="text" class="form-control" placeholder="Pet Breed" name='pet[breed]'>
-                </div>
-                <div class="form-group">
-                  <label for='petDescription'>Description</label>
-                  <textarea type="text" class="form-control" placeholder="Description" rows="3" name='pet[description]'></textarea>
-                </div>
-                <button type="submit" class="btn btn-secondary">Update Pet Information</button>
-              </form>
-              <div class="dropdown-divider"></div>
-              <p class="dropdown-item">Please enter your information!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- <div class='textbox container'>
-        <div class='row mb-1'>
-          <div class='textbox container remove-a-pet-section'>
-            <div class="dropdown">
-              <button class="col-12 btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              😿 Remove A Pet 😿
-              </button>
-              <div class="dropdown-menu">
-              <form class="px-4 py-3">
-                <div class="form-group">
-                  <label for="petName">ID</label>
-                  <input type="text" class="form-control" placeholder="Pet ID" required="true" name='pet[id]'>
-                </div>
-                <button type="submit" class="btn btn-secondary">Remove A Pet</button>
-              </form>
-              <div class="dropdown-divider"></div>
-              <p class="dropdown-item">Enter the pet's ID to remove!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
 
 

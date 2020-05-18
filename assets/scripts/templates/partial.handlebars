@@ -1,1 +1,46 @@
-<button class="removePetButton btn btn-danger" data-id="{{pet.id}}">Remove Pet</button>
+<!-- <button class="removePetButton btn btn-danger" data-id="{{pet._id}}">Remove Pet</button> -->
+<!-- Update a Pet -->
+<div class='textbox container'>
+  <div class='row mb-1'>
+    <div class='textbox container update-a-pet-section'>
+      <div class="dropdown">
+        <button class="col-12 btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="{{pets._id}}" >
+        🐾 Update A Pet 🐾
+        </button>
+        <div class="dropdown-menu">
+        <!-- <form class="px-4 py-3">
+          <div class="form-group">
+            <label for="petName">ID</label>
+            <input type="text" class="form-control" placeholder="Pet ID (required)" required="true" name='pet[id]'>
+          </div> -->
+          <div class="form-group">
+            <label for="petName">Name</label>
+            <input type="text" class="form-control" placeholder="Pet Name" name='pet[name]'>
+          </div>
+          <div class="form-group">
+            <label for="petBreed">Breed</label>
+            <input type="text" class="form-control" placeholder="Pet Breed" name='pet[breed]'>
+          </div>
+          <div class="form-group">
+            <label for='petDescription'>Description</label>
+            <textarea type="text" class="form-control" placeholder="Description" rows="3" name='pet[description]'></textarea>
+          </div>
+          <button type="submit" class="btn btn-secondary">Update Pet Information</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <p class="dropdown-item">Please enter your information!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='textbox container'>
+  <div class='row mb-1'>
+    <div class='textbox container remove-a-pet-section'>
+        <button class="col-12 btn btn-danger removePetButton btn btn-danger" data-id="{{pet._id}}" type="button">
+        😿 Remove A Pet 😿
+        </button>
+    </div>
+  </div>
+</div>
