@@ -29,7 +29,7 @@
         </form>
 
         <!-- Auto Sign-In Button -->
-        <button class="btn btn-info my-2 my-sm-0 guest-account-section" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to a Guest Account!">🕸️ Guest 🕷️</button>
+        <button class="btn btn-info my-2 my-sm-0 guest-account-section" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to a Guest Account!">🕸️ Test Account 🕷️</button>
 
         <!-- Sign-Up Dropdown Button -->
         <div class="dropdown sign-up-section data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Up for a New Account!"">
@@ -85,7 +85,19 @@
       </nav>
 
       <!-- Information Indicator Sections -->
+      <div id='partialMessage'></div>
       <div id='message'></div>
+
+      <!-- Greeting Text Section -->
+      <div class='textbox container greetings-text'>
+        <div class='row mb-1'>
+          <div class='col-12 text-center'>Hello</div>
+          <div class='col-12 text-center' id='username'>User</div>
+          <div class='col-6 text-right'>Your Owner ID is:</div>
+          <div class='col-6 text-left' id='userId'>ID</div>
+        </div>
+      </div>
+
       <div class="content"></div>
 
       <!-- Splash Page Carousel -->
@@ -107,19 +119,12 @@
       </div>
 
     <div class='signed-in-section'>
-      <!-- Greeting Text Section -->
-      <div class='textbox container greetings-text'>
-        <div class='row mb-1'>
-          <div class='col-12 text-center'>Hello</div>
-          <div class='col-12 text-center' id='username'>User</div>
-        </div>
-      </div>
 
       <!--See All Your Pets Section -->
       <div class='textbox container'>
         <div class='row mb-1'>
           <button type="button" class="col-12 btn btn-primary btn-lg see-your-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to See your Pets!">
-          🐾 See All of Your Pets 🐾
+          🐾 See All Pets 🐾
           </button>
         </div>
       </div>
@@ -127,7 +132,7 @@
       <div class='textbox container'>
         <div class='row mb-1'>
           <button type="button" class="col-12 btn btn-secondary btn-lg clear-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to Hide your Pets!">
-          🦊 Hide All of Your Pets 🦊
+          🦊 Hide All Pets 🦊
           </button>
         </div>
       </div>

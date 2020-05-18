@@ -25,22 +25,29 @@ const onAddPet = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   api.addPet(formData)
+    .then(function (data) {
+      onShowAllPets(event)
+    })
     .then(ui.addPetSuccess)
     .catch(ui.addPetFailure)
 }
 
 const onUpdatePet = function (event) {
+  const petId = $(event.target).data('id')
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  formData.pet.id = petId
   api.updatePet(formData)
+    .then(function (data) {
+      onShowAllPets(event)
+    })
     .then(ui.updatePetSuccess)
     .catch(ui.updatePetFailure)
 }
 
 const onRemovePet = (event) => {
   const petId = $(event.target).data('id')
-  console.log(petId)
   event.preventDefault()
   api.removePet(petId)
     .then(function (data) {
@@ -59,7 +66,7 @@ const addHandlers = () => {
   $('.see-your-pets-section').on('click', onShowAllPets)
   // $('.show-a-pet-section').on('submit', onShowPet)
   $('.add-a-pet-section').on('submit', onAddPet)
-  $('.update-a-pet-section').on('submit', onUpdatePet)
+  $('.content').on('submit', '.update-a-pet-section', onUpdatePet)
   $('.clear-pets-section').on('click', onClearPets)
   $('.content').on('click', '.removePetButton', onRemovePet)
 }

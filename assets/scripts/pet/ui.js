@@ -7,12 +7,11 @@ const showAllPetsSuccess = function (data) {
   $('#message').show()
   $('.see-your-pets-section').hide()
   $('.clear-pets-section').show()
-  $('.greetings-text').hide()
+  $('.add-a-pet-section').show()
   $('#message').text('Showed all pets successfully!')
   $('#message').removeClass()
   $('#message').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
-  console.log(data.pets)
   const showPetsHtml = showPets({ pets: data.pets })
   $('.content').html(showPetsHtml)
 }
@@ -44,10 +43,10 @@ const showAllPetsFailure = function (error) {
 
 // Add a Pet
 const addPetSuccess = function (data) {
-  $('#message').show()
-  $('#message').text('Added pet successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success alert-dismissible fade show')
+  $('#partialMessage').show()
+  $('#partialMessage').text('Added pet successfully!')
+  $('#partialMessage').removeClass()
+  $('#partialMessage').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
 }
 
@@ -61,10 +60,10 @@ const addPetFailure = function (error) {
 
 // Update a Pet
 const updatePetSuccess = function (data) {
-  $('#message').show()
-  $('#message').text('Updated pet successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success alert-dismissible fade show')
+  $('#partialMessage').show()
+  $('#partialMessage').text('Updated pet successfully!')
+  $('#partialMessage').removeClass()
+  $('#partialMessage').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
 }
 
@@ -78,10 +77,10 @@ const updatePetFailure = function (error) {
 
 // Remove Pet
 const removePetSuccess = function (data) {
-  $('#message').show()
-  $('#message').text('Removed pet successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('alert alert-success justify-content-center')
+  $('#partialMessage').show()
+  $('#partialMessage').text('Removed pet successfully!')
+  $('#partialMessage').removeClass()
+  $('#partialMessage').addClass('alert alert-success justify-content-center')
 }
 
 const removePetFailure = function (error) {
@@ -94,7 +93,9 @@ const removePetFailure = function (error) {
 
 const clearPets = () => {
   $('#message').show()
-  $('#message').text(`Hid all pets successfully!`)
+  $('#partialMessage').hide()
+  $('.add-a-pet-section').hide()
+  $('#message').text(`Hide all pets successful!`)
   $('#message').removeClass()
   $('#message').addClass('alert alert-success justify-content-center')
   $('form').trigger('reset')
