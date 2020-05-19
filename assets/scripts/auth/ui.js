@@ -60,6 +60,8 @@ const changePasswordSuccess = function (data) {
   $('#create-game-button').show()
   $('.textbox').show()
   $('#sign-out-button').show()
+  $('.see-your-pets-section').show()
+  $('.add-a-pet-section').hide()
   $('#change-password-button').show()
   $('form').trigger('reset')
 }
