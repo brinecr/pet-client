@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <title>Pet Sharing Application</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+
+      <!-- Navigation Bar -->
+      <nav class="navbar navbar-dark nav-justified" style="background-color: #563D7C;">
+        <!-- Navigation Bar title -->
+        <a class="navbar-brand">Pet Sharing Application</a>
+        <a class="navbar-nav">🐈🐕🐎🐄🐖🐐🐁🐇🦎🐢🐠🦜</a>
+
+        <!-- Sign-In Section -->
+        <form class="form-inline sign-in-section">
+          <input class="form-control mr-sm-2" type="email" placeholder="email" aria-label="email" name='credentials[email]'>
+          <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="password" name='credentials[password]'>
+          <button class="btn btn-success my-2 my-sm-0" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to an Existing Account!">🐾 Sign-In 🐾</button>
+        </form>
+
+        <!-- Auto Sign-In Button -->
+        <button class="btn btn-info my-2 my-sm-0 guest-account-section" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-In to a Guest Account!">🕸️ Test Account 🕷️</button>
+
+        <!-- Sign-Up Dropdown Button -->
+        <div class="dropdown sign-up-section data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Up for a New Account!"">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🐾 Sign-Up 🐾
+          </button>
+          <div class="dropdown-menu dropdown-menu-lg-right">
+          <form class="px-4 py-3">
+            <div class="form-group">
+              <label for="emailSignUp">Email address</label>
+              <input type="email" class="form-control" placeholder="email@example.com" name='credentials[email]'>
+            </div>
+            <div class="form-group">
+              <label for="password">New Password</label>
+              <input type="password" class="form-control" placeholder="Password" name='credentials[password]'>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Password" name='credentials[password_confirmation]'>
+            </div>
+            <button type="submit" class="btn btn-secondary">Sign-Up</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <p class="dropdown-item">Please enter your information!</p>
+        </div>
+        </div>
+
+        <!-- Change Password Button -->
+        <div class="dropdown change-password-section" data-toggle="tooltip" data-placement="top" title="Click Here to Change your Password!">
+          <button class="btn btn-warning dropdown-toggle my-2 my-sm-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change Password
+          </button>
+          <div class="dropdown-menu dropdown-menu-lg-right">
+          <form class="px-4 py-3">
+            <div class="form-group">
+              <label for="oldPassword">Old Password</label>
+              <input type="password" class="form-control" placeholder="Password" name='passwords[old]'>
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" class="form-control" placeholder="Password" name='passwords[new]'>
+            </div>
+            <button type="submit" class="btn btn-secondary">Change Password</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <p class="dropdown-item">Please enter your information!</p>
+          </div>
+        </div>
+
+          <!-- Sign-Out Button -->
+          <button class="sign-out-section btn btn-danger my-2 my-sm-0 sign-out-button" type="submit" data-toggle="tooltip" data-placement="top" title="Click Here to Sign-Out!">Sign-Out</button>
+
+      </nav>
+
+      <!-- Information Indicator Sections -->
+      <div id='partialMessage'></div>
+      <div id='message'></div>
+
+      <!-- Greeting Text Section -->
+      <div class='textbox container greetings-text'>
+        <div class='row mb-1'>
+          <div class='col-12 text-center'>Hello</div>
+          <div class='col-12 text-center' id='username'>User</div>
+          <div class='col-12 text-center'>Your Owner ID is:</div>
+          <div class='col-12 text-center' id='userId'>ID</div>
+        </div>
+      </div>
+
+      <div class="content"></div>
+
+      <!-- Splash Page Carousel -->
+      <div class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="10000">
+            <img src="https://pbs.twimg.com/media/ETzSufYX0AAdg9r.jpg" class="d-block w-100" alt="Dog">
+          </div>
+          <div class="carousel-item" data-interval="10000">
+            <img src="https://cdn10.bostonmagazine.com/wp-content/uploads/2016/11/Cat-Cafe-flickr.jpg" class="d-block w-100" alt="Cat">
+          </div>
+          <div class="carousel-item" data-interval="10000">
+            <img src="https://pets.amerikanki.com/wp-content/uploads/2014/05/Important_Tips_for_Caring_for_Guinea_Pigs.jpg" class="d-block w-100" alt="Guinea Pigs">
+          </div>
+          <div class="carousel-item" data-interval="10000">
+            <img src="https://webcomicms.net/sites/default/files/clipart/161714/pics-fish-161714-9127344.jpg" class="d-block w-100" alt="Fish">
+          </div>
+        </div>
+      </div>
+
+    <div class='signed-in-section'>
+
+      <!--See All Your Pets Section -->
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <button type="button" class="col-12 btn btn-primary btn-lg see-your-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to See your Pets!">
+          🐾 See All Pets 🐾
+          </button>
+        </div>
+      </div>
+
+      <div class='textbox container'>
+        <div class='row mb-1'>
+          <button type="button" class="col-12 btn btn-secondary btn-lg clear-pets-section" data-toggle="tooltip" data-placement="top" title="Click Here to Hide your Pets!">
+          🦊 Hide All Pets 🦊
+          </button>
+        </div>
+      </div>
+
+      <!-- Show Your Pet by ID Section -->
+      <!-- <div class='textbox container'>
+        <div class='row mb-1'>
+          <div class='textbox container show-a-pet-section'>
+            <div class="dropdown">
+              <button class="col-12 btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              🦊 Show A Pet by ID 🦊
+              </button>
+              <div class="dropdown-menu">
+              <form class="px-4 py-3">
+                <div class="form-group">
+                  <label for="petName">ID</label>
+                  <input type="text" class="form-control" placeholder="Pet ID" required="true" name='pet[id]'>
+                </div>
+                <button type="submit" class="btn btn-secondary">Show A Pet</button>
+              </form>
+              <div class="dropdown-divider"></div>
+              <p class="dropdown-item">Enter the pet's ID to show them!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Add a Pet -->
+      <div class='textbox container add-a-pet-section'>
+        <div class="dropdown">
+          <button class="col-12 btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          🐶 Add A Pet 🐶
+          </button>
+          <div class="dropdown-menu">
+          <form class="px-4 py-3">
+            <div class="form-group">
+              <label for="petName">Name</label>
+              <input type="text" class="form-control" placeholder="Pet Name (required)" required="true" name='pet[name]'>
+            </div>
+            <div class="form-group">
+              <label for="petBreed">Breed</label>
+              <input type="text" class="form-control" placeholder="Pet Breed (required)" required="true" name='pet[breed]'>
+            </div>
+            <div class="form-group">
+              <label for='petDescription'>Description</label>
+              <textarea type="text" class="form-control" placeholder="Description" rows="3" name='pet[description]'></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit New Pet</button>
+          </form>
+          <div class="dropdown-divider"></div>
+          <p class="dropdown-item">Please enter your information!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  <nav class="navbar navbar-custom fixed-bottom" style="background-color: #563D7C;">
+  </nav>
+
+    </body>
+</html>
