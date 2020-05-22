@@ -1,6 +1,7 @@
 'use strict'
 
 const showPets = require('../templates/pet-listing.handlebars')
+const store = require('../store')
 
 // Show All of Your Pets
 const showAllPetsSuccess = function (data) {
@@ -12,7 +13,8 @@ const showAllPetsSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('alert alert-success alert-dismissible fade show')
   $('form').trigger('reset')
-  const showPetsHtml = showPets({ pets: data.pets })
+  // console.log(store.user)
+  const showPetsHtml = showPets({ pets: data.pets, user: store.user })
   $('.content').html(showPetsHtml)
 }
 

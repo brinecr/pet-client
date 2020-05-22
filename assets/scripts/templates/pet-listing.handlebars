@@ -20,7 +20,9 @@
     <h6>
       {{pet.owner}}
     </h6>
-    {{> partial pet=pet}}
+    {{#if (owner ../user pet.owner)}}
+      {{> partial pet=pet}}
+    {{/if}}
   </section>
 
 {{/each}}
